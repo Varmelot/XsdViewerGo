@@ -17,7 +17,7 @@ jobs:
             build_args: -tags webkit2_4_0
           - os: macos-latest
             name: macos
-            binary: XsdViewerGo
+            binary: XsdViewerGo.app
             build_args: ''
           - os: windows-latest
             name: windows
@@ -70,5 +70,5 @@ jobs:
         with:
           files: |
             artifacts/XsdViewerGo-linux/XsdViewerGo
-            artifacts/XsdViewerGo-macos/XsdViewerGo
+            artifacts/XsdViewerGo-macos/XsdViewerGo.app
             artifacts/XsdViewerGo-windows/XsdViewerGo.exe
