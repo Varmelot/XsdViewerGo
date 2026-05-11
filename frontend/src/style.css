@@ -1,0 +1,120 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: Ubuntu, 'Segoe UI', sans-serif; font-size: 13px; background: #fff; overflow: hidden; height: 100vh; display: flex; flex-direction: column; }
+
+#app { display: flex; flex-direction: column; height: 100vh; }
+
+/* ── Toolbar ── */
+#toolbar {
+  display: flex; align-items: center; gap: 4px;
+  background: #2b2b2b; padding: 4px 8px; flex-shrink: 0;
+}
+#toolbar button {
+  background: #444; color: #eee; border: 1px solid #666;
+  border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 13px;
+}
+#toolbar button:hover { background: #555; }
+.sep { width: 1px; height: 20px; background: #666; margin: 0 4px; }
+#search-wrap {
+  position: relative; flex: 1; max-width: 500px; display: flex; align-items: center;
+}
+#search-input {
+  width: 100%; padding: 4px 28px 4px 10px; border: 1px solid #777;
+  border-radius: 4px; background: #fff; color: #000; font-size: 13px;
+}
+#search-clear {
+  position: absolute; right: 6px; display: none;
+  background: none; border: none; color: #999; cursor: pointer;
+  font-size: 18px; line-height: 1; padding: 0 2px;
+}
+#search-clear:hover { color: #fff; }
+
+/* ── Legend ── */
+#legend-bar {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  padding: 4px 8px; background: #f5f5f5;
+  border-bottom: 1px solid #ccc; flex-shrink: 0; min-height: 28px;
+}
+.legend-chip {
+  padding: 2px 8px; border: 1px solid #555; border-radius: 3px;
+  font-weight: bold; font-size: 12px; white-space: nowrap;
+}
+
+/* ── Main area ── */
+#main-area { display: flex; flex: 1; overflow: hidden; }
+
+/* ── Tree ── */
+#tree-area { display: flex; flex-direction: column; flex: 4; overflow: hidden; min-width: 0; }
+
+#tree-header {
+  display: flex; background: #333; color: #fff;
+  font-weight: bold; border-bottom: 1px solid #111; flex-shrink: 0;
+}
+#tree-header .col-name  { width: 450px; padding: 5px 8px; border-right: 1px solid #111; flex-shrink: 0; }
+#tree-header .col-type  { width: 250px; padding: 5px 8px; border-right: 1px solid #111; flex-shrink: 0; }
+#tree-header .col-anno  { flex: 1; padding: 5px 8px; }
+
+#tree-body { flex: 1; overflow: auto; }
+
+/* ── Tree row ── */
+.tree-row {
+  display: flex; align-items: stretch;
+  border-bottom: 1px solid #ddd; cursor: pointer;
+  min-height: 28px;
+}
+.tree-row:hover { filter: brightness(0.94); }
+.tree-row.selected { outline: 2px solid #0078D7; outline-offset: -2px; }
+.tree-row.hidden { display: none !important; }
+
+.cell-name {
+  width: 450px; padding: 3px 6px;
+  border-right: 1px solid #ccc; display: flex; align-items: center;
+  gap: 4px; overflow: hidden; white-space: nowrap;
+  font-weight: bold; flex-shrink: 0;
+}
+.cell-type {
+  width: 250px; padding: 3px 6px;
+  border-right: 1px solid #ccc; display: flex; align-items: center;
+  overflow: hidden; white-space: nowrap; flex-shrink: 0;
+}
+.cell-anno {
+  flex: 1; padding: 3px 6px; display: flex; align-items: center;
+  overflow: hidden; white-space: nowrap; color: #444;
+}
+
+.toggle-btn {
+  cursor: pointer; user-select: none;
+  font-size: 10px; color: #555; flex-shrink: 0;
+  width: 14px; text-align: center;
+}
+.indent { display: inline-block; flex-shrink: 0; }
+.name-text { overflow: hidden; text-overflow: ellipsis; }
+
+/* Search highlight */
+.hl { background: #FFCA28; color: #000; border-radius: 2px; padding: 0 1px; }
+
+/* ── Resizer ── */
+#resizer {
+  width: 5px; cursor: col-resize; background: #ccc; flex-shrink: 0;
+}
+#resizer:hover, #resizer.active { background: #0078D7; }
+
+/* ── Sidebar ── */
+#sidebar { flex: 1; overflow: auto; min-width: 150px; }
+
+#attr-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+#attr-table th {
+  background: #333; color: #fff; font-weight: bold;
+  padding: 5px 8px; border: 1px solid #111; text-align: left; position: sticky; top: 0;
+}
+#attr-table td {
+  padding: 4px 8px; border: 1px solid #ddd; word-break: break-word;
+}
+#attr-table tr:nth-child(even) td { background: #f9f9f9; }
+#attr-table tr:hover td { background: #e8f0fe; }
+
+/* ── Statusbar ── */
+#statusbar {
+  background: #2b2b2b; color: #ccc; padding: 3px 10px;
+  font-size: 12px; flex-shrink: 0;
+}

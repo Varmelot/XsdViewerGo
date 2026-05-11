@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XSD Viewer Pro</title>
+  <link rel="stylesheet" href="/src/style.css"/>
+</head>
+<body>
+  <div id="app">
+    <div id="toolbar">
+      <button id="btn-open">📁 Открыть XSD</button>
+      <button id="btn-expand">➕ Развернуть</button>
+      <button id="btn-collapse">➖ Свернуть</button>
+      <span class="sep"></span>
+      <button id="btn-zoom-in">🔍+</button>
+      <button id="btn-zoom-out">🔍−</button>
+      <button id="btn-zoom-reset">🔍×</button>
+      <span class="sep"></span>
+      <div id="search-wrap">
+        <input id="search-input" type="text" placeholder="🔍 Быстрый поиск по всем колонкам..."/>
+        <button id="search-clear" title="Очистить поиск">×</button>
+      </div>
+    </div>
+
+    <div id="legend-bar"></div>
+
+    <div id="main-area">
+      <div id="tree-area">
+        <div id="tree-header">
+          <div class="col-name">Структура</div>
+          <div class="col-type">Тип / Кратность</div>
+          <div class="col-anno">Описание</div>
+        </div>
+        <div id="tree-body"></div>
+      </div>
+      <div id="resizer"></div>
+      <div id="sidebar">
+        <table id="attr-table">
+          <thead>
+            <tr><th>Атрибут</th><th>Значение</th></tr>
+          </thead>
+          <tbody id="attr-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="statusbar">Готово к работе. Выберите файл.</div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
